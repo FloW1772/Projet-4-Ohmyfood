@@ -1,0 +1,31 @@
+.explo {
+    background-color: #D2D2D2;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+  flex-direction: column;
+
+  section {
+    text-align: center;
+  }
+
+
+}
+@media screen and (min-width: 1024px) {
+  .explo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+    background-color: #D2D2D2;
+
+    section {
+      text-align: center;
+
+      br {
+        display: none;
+      }
+    }
+  }
+}
