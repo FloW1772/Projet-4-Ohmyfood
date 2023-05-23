@@ -374,7 +374,7 @@ h6 {
   margin: 0;
   align-self: flex-end; /* Aligne l'élément à la même hauteur que l'élément <h5> */
   margin-top: -15px; /* Remonte l'élément de 10 pixels */
-  margin-left: 55px; /* Déplace l'élément vers la gauche de 10 pixels */
+  margin-left: 10px; /* Déplace l'élément vers la gauche de 10 pixels */
 }
 
 .entree {
