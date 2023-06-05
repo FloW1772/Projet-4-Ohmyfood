@@ -29,6 +29,24 @@
           object-fit: cover;
           border-radius: 15px 15px 0 0;
         }
+        .card-content{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          padding-right: 3%;
+          padding-top: 2%;
+          .card-txt{
+            padding-left: 3%;
+            h3{
+              margin-top: 2%;
+            }
+            p{
+              margin-top: 0%;
+              margin-bottom: 4%;
+            }
+          }
+        }
+      
 
         h3 {
           font-size: 20px;

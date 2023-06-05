@@ -1,77 +1,87 @@
-.container-entrees {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    .entree {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        isolation: isolate;
-        width: 349px;
-        height: 69px;
-        text-decoration: none;
-        color: black;
-        /* Background */
-        background: #F7F7F7;
-        /* Shadow/Instructions */
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-        border-radius: 20px;
-        margin-bottom: 20px; /* Ajout de l'espace entre les conteneurs */
-    }
+.menu-container {
+  background-color: #99E2D0;
+  border-radius: 40px 40px 0 0;
+  margin-top: -60px;
+  z-index: 2;
+  position: relative;
+}
+
+.container-global {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.entree {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  width: 90%;
+  margin: 0 auto 40px auto;
+  text-decoration: none;
+  color: black;
+  background: #F7F7F7;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  cursor: pointer;
+  padding-right: 2%;
+  height: 80px;
+
+  .overlay {
+    width: calc(100% + 2%);
+    height: 100%;
+    background: #99E2D0;
+    border-radius: 0 15px 15px 0;
+    display: none;
+    opacity: 0;
+    z-index: 2;
+    transition: all 1000ms;
+    transform: translateX(-10px);
   }
 
-  .container-plats {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    .plat {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        isolation: isolate;
-        width: 349px;
-        height: 69px;
-        text-decoration: none;
-        color: black;
-        /* Background */
-        background: #F7F7F7;
-        /* Shadow/Instructions */
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-        border-radius: 20px;
-        margin-bottom: 20px; /* Ajout de l'espace entre les conteneurs */
-    }
+  input[type="checkbox"] {
+    position: absolute;
+    display: none;
   }
 
-  .container-desserts {
+  input[type="checkbox"]:checked ~ .overlay,
+  &:focus-within .overlay,
+  &:hover .overlay {
+    width: 25%;
+    height: calc(100% + 5%);
+    opacity: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    .dessert {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        isolation: isolate;
-        width: 349px;
-        height: 69px;
-        text-decoration: none;
-        color: black;
-        /* Background */
-        background: #F7F7F7;
-        /* Shadow/Instructions */
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-        border-radius: 20px;
-        margin-bottom: 20px; /* Ajout de l'espace entre les conteneurs */
-    }
+    transform: translateX(0);
   }
+
+  &:hover .overlay {
+    align-items: center;
+    justify-content: center;
+    transform: translateX(10px);
+  }
+
+  &:hover .overlay,
+  input[type="checkbox"]:checked ~ .overlay {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  i.fa-circle-check {
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1000ms;
+  }
+}
+
+
+
+
 
   h2 {
     border-radius: 10px 10px 0 0; // Arrondir les deux bords supérieurs, avec une valeur de rayon de 10px
@@ -79,35 +89,98 @@
     margin-bottom: 0; // Supprime la marge inférieure par défaut du h2
 
   }
-  h3{ 
-  margin-bottom: 0; // Supprime la marge inférieure par défaut du h3
-
-}
+  h3.tiret {
+    margin-bottom: 20px;
+    border-bottom: 3px solid #99E2D0;
+    font-size: 18px;
+    border-bottom-width: 3px;
+    width: 3%;
+  }
+  
 
 h4 {
     margin-bottom: 5px; /* Ajustez la marge inférieure selon vos préférences */
+    margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
+
+
   }
   
-  h5 {
+  p {
     margin: 0; /* Supprime la marge par défaut */
-  }
-  h6 {
-    margin: 0;
-    align-self: flex-end; /* Aligne l'élément à la même hauteur que l'élément <h5> */
-    margin-top: -15px; /* Remonte l'élément de 10 pixels */
-    margin-left: 10px; /* Déplace l'élément vers la gauche de 10 pixels */
-}
-     .entree {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .plat {
-        display: flex;
-        flex-direction: column;
-      }
+    // margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
 
-      .dessert {
+
+  }
+  .argent {
+      margin: 0;
+      display: flex;
+      width: 10%;
+      align-items: flex-end;
+    }
+
+
+
+    @media (min-width: 1024px) {
+      .container-global {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
       }
+    
+      .entree {
+        width: 70%;
+        margin: 0 auto 20px auto;
+      }
+    
+      .overlay {
+        width: calc(100% + 10%);
+        height: calc(100% + 5%);
+      }
+    
+      input[type="checkbox"] {
+        display: none;
+      }
+    
+      input[type="checkbox"]:checked ~ .overlay,
+      .entree:focus-within .overlay {
+        width: 25%;
+        height: calc(100% + 5%);
+      }
+    
+      .entree:hover .overlay {
+        width: 25%;
+        height: calc(100% + 21%);
+      }
+    
+      .entree:active .overlay {
+        width: 0;
+        height: calc(100% + 21%);
+      }
+    
+      i.fa-circle-check {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+      }
+    
+      h2 {
+        border-radius: 10px 10px 0 0;
+      }
+    
+      h3.tiret {
+        width: 5%;
+      }
+    
+      h4 {
+        margin-left: 10px;
+      }
+    
+      p {
+        margin-left: 10px;
+      }
+    
+      .argent {
+        width: 20%;
+      }
+    }

@@ -23,16 +23,20 @@ header img {
 .image-container {
   position: relative;
   width: 100%;
-  height: 0;
-  padding-bottom: 50%;
 }
 .image-container img {
-  position: absolute;
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+@media (min-width: 1024px) {
+  header img {
+    width: 100%;
+  }
+}
 footer {
   background-color: #353535;
   color: white;
@@ -74,8 +78,10 @@ footer ul li a:before {
   footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    padding-top: 4%;
+    padding-bottom: 2%;
   }
   footer h3 {
     margin-top: 0;
@@ -89,15 +95,16 @@ footer ul li a:before {
     flex-direction: row;
     padding-left: 0;
     margin-right: 25px;
+    width: 70%;
   }
   footer ul li {
-    display: block;
+    display: flex;
+    align-items: center;
     margin-right: 10px;
   }
   footer ul li i {
     display: inline-block;
     margin-right: 5px;
-    vertical-align: middle; /* Ajouter l'alignement vertical au milieu */
   }
   footer ul li a {
     color: white;
@@ -105,7 +112,6 @@ footer ul li a:before {
     display: inline-block;
     padding: 0.5rem;
     position: relative;
-    vertical-align: middle; /* Ajouter l'alignement vertical au milieu */
   }
   footer ul li a:before {
     content: none;
@@ -124,13 +130,21 @@ footer ul li a:before {
   background-color: #EAEAEA;
   width: 25%;
 }
-.search input ::placeholder {
+.search input::placeholder {
   opacity: 1;
   color: black;
 }
+@media screen and (max-width: 1024px) {
+  .search .search {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search .search input {
+    width: 100%;
+  }
+}
 
 .explo {
-  background-color: #F6F6F6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,7 +159,6 @@ footer ul li a:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F6F6F6;
   }
   .explo section {
     text-align: center;
@@ -167,6 +180,7 @@ footer ul li a:before {
   cursor: pointer; /* curseur pointer au survol */
   border-radius: 25px; /* bords arrondis */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10%;
 }
 
 .section-restaurants {
@@ -197,6 +211,23 @@ footer ul li a:before {
   height: 251px;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+}
+.section-restaurants .container-cards a .card .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-right: 3%;
+  padding-top: 2%;
+}
+.section-restaurants .container-cards a .card .card-content .card-txt {
+  padding-left: 3%;
+}
+.section-restaurants .container-cards a .card .card-content .card-txt h3 {
+  margin-top: 2%;
+}
+.section-restaurants .container-cards a .card .card-content .card-txt p {
+  margin-top: 0%;
+  margin-bottom: 4%;
 }
 .section-restaurants .container-cards a .card h3 {
   font-size: 20px;
@@ -280,76 +311,77 @@ h2 {
     margin-right: 50px; /* Ajouter un espace entre le nombre et le contenu */
   }
 }
-.container-entrees {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.container-entrees .entree {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  isolation: isolate;
-  width: 349px;
-  height: 69px;
-  text-decoration: none;
-  color: black;
-  /* Background */
-  background: #F7F7F7;
-  /* Shadow/Instructions */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 20px;
-  margin-bottom: 20px; /* Ajout de l'espace entre les conteneurs */
+.menu-container {
+  background-color: #99E2D0;
+  border-radius: 40px 40px 0 0;
+  margin-top: -60px;
+  z-index: 2;
+  position: relative;
 }
 
-.container-plats {
+.container-global {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-.container-plats .plat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  isolation: isolate;
-  width: 349px;
-  height: 69px;
-  text-decoration: none;
-  color: black;
-  /* Background */
-  background: #F7F7F7;
-  /* Shadow/Instructions */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 20px;
-  margin-bottom: 20px; /* Ajout de l'espace entre les conteneurs */
 }
 
-.container-desserts {
+.entree {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.container-desserts .dessert {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 0;
-  isolation: isolate;
-  width: 349px;
-  height: 69px;
+  width: 90%;
+  margin: 0 auto 40px auto;
   text-decoration: none;
   color: black;
-  /* Background */
   background: #F7F7F7;
-  /* Shadow/Instructions */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 20px;
-  margin-bottom: 20px; /* Ajout de l'espace entre les conteneurs */
+  border-radius: 15px;
+  cursor: pointer;
+  padding-right: 2%;
+  height: 80px;
+}
+.entree .overlay {
+  width: 102%;
+  height: 100%;
+  background: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  display: none;
+  opacity: 0;
+  z-index: 2;
+  transition: all 1000ms;
+  transform: translateX(-10px);
+}
+.entree input[type=checkbox] {
+  position: absolute;
+  display: none;
+}
+.entree input[type=checkbox]:checked ~ .overlay, .entree:focus-within .overlay, .entree:hover .overlay {
+  width: 25%;
+  height: 105%;
+  opacity: 1;
+  display: flex;
+  transform: translateX(0);
+}
+.entree:hover .overlay {
+  align-items: center;
+  justify-content: center;
+  transform: translateX(10px);
+}
+.entree:hover .overlay,
+.entree input[type=checkbox]:checked ~ .overlay {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.entree i.fa-circle-check {
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1000ms;
 }
 
 h2 {
@@ -358,38 +390,106 @@ h2 {
   margin-bottom: 0;
 }
 
-h3 {
-  margin-bottom: 0;
+h3.tiret {
+  margin-bottom: 20px;
+  border-bottom: 3px solid #99E2D0;
+  font-size: 18px;
+  border-bottom-width: 3px;
+  width: 3%;
 }
 
 h4 {
   margin-bottom: 5px; /* Ajustez la marge inférieure selon vos préférences */
+  margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
 }
 
-h5 {
+p {
   margin: 0; /* Supprime la marge par défaut */
 }
 
-h6 {
+.argent {
   margin: 0;
-  align-self: flex-end; /* Aligne l'élément à la même hauteur que l'élément <h5> */
-  margin-top: -15px; /* Remonte l'élément de 10 pixels */
-  margin-left: 10px; /* Déplace l'élément vers la gauche de 10 pixels */
+  display: flex;
+  width: 10%;
+  align-items: flex-end;
 }
 
-.entree {
-  display: flex;
-  flex-direction: column;
+@media (min-width: 1024px) {
+  .container-global {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .entree {
+    width: 70%;
+    margin: 0 auto 20px auto;
+  }
+  .overlay {
+    width: 110%;
+    height: 105%;
+  }
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=checkbox]:checked ~ .overlay,
+  .entree:focus-within .overlay {
+    width: 25%;
+    height: 105%;
+  }
+  .entree:hover .overlay {
+    width: 25%;
+    height: 121%;
+  }
+  .entree:active .overlay {
+    width: 0;
+    height: 121%;
+  }
+  i.fa-circle-check {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+  h2 {
+    border-radius: 10px 10px 0 0;
+  }
+  h3.tiret {
+    width: 5%;
+  }
+  h4 {
+    margin-left: 10px;
+  }
+  p {
+    margin-left: 10px;
+  }
+  .argent {
+    width: 20%;
+  }
 }
-
-.plat {
-  display: flex;
-  flex-direction: column;
+.heart .fa-regular.fa-heart {
+  opacity: 1;
+  position: relative;
+  font-size: 25px;
 }
-
-.dessert {
-  display: flex;
-  flex-direction: column;
+.heart .fa-regular.fa-heart:hover .fa-solid.fa-heart {
+  transform: scale(1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  opacity: 1;
+  transition: all 600ms ease-in-out;
+}
+.heart .fa-regular.fa-heart .fa-solid.fa-heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: scale(0);
+}
+.heart .fa-solid.fa-heart:hover .fa-regular.fa-heart {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
