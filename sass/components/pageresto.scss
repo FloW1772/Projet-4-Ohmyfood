@@ -6,12 +6,6 @@
   position: relative;
 }
 
-.container-global {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .entree {
   position: relative;
   display: flex;
@@ -28,44 +22,21 @@
   cursor: pointer;
   padding-right: 2%;
   height: 80px;
+}
 
-  .overlay {
-    width: calc(100% + 2%);
-    height: 100%;
-    background: #99E2D0;
-    border-radius: 0 15px 15px 0;
-    display: none;
-    opacity: 0;
-    z-index: 2;
-    transition: all 1000ms;
-    transform: translateX(-10px);
-  }
-
-  input[type="checkbox"] {
-    position: absolute;
-    display: none;
-  }
-
-  input[type="checkbox"]:checked ~ .overlay,
-  &:focus-within .overlay,
-  &:hover .overlay {
-    width: 25%;
-    height: calc(100% + 5%);
-    opacity: 1;
-    display: flex;
-    transform: translateX(0);
-  }
-
-  &:hover .overlay {
-    align-items: center;
-    justify-content: center;
-    transform: translateX(10px);
-  }
-
-  &:hover .overlay,
-  input[type="checkbox"]:checked ~ .overlay {
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  }
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  opacity: 0;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   i.fa-circle-check {
     color: white;
@@ -79,9 +50,14 @@
   }
 }
 
+input[type="checkbox"] {
+  display: none;
+}
 
-
-
+input[type="checkbox"]:checked + label .overlay {
+  width: 25%;
+  opacity: 1;
+}
 
   h2 {
     border-radius: 10px 10px 0 0; // Arrondir les deux bords supérieurs, avec une valeur de rayon de 10px
@@ -105,20 +81,20 @@ h4 {
 
   }
   
-  p {
+  .txt {
     margin: 0; /* Supprime la marge par défaut */
-    // margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
+    margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
+}
 
 
-  }
+  
   .argent {
-      margin: 0;
-      display: flex;
-      width: 10%;
-      align-items: flex-end;
-    }
-
-
+    margin: 0;
+    display: flex;
+    width: 10%;
+    align-items: flex-end;
+    transition: all 0.5s ease-in-out;
+  }
 
     @media (min-width: 1024px) {
       .container-global {

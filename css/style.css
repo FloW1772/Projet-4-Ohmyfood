@@ -319,12 +319,6 @@ h2 {
   position: relative;
 }
 
-.container-global {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .entree {
   position: relative;
   display: flex;
@@ -342,38 +336,22 @@ h2 {
   padding-right: 2%;
   height: 80px;
 }
-.entree .overlay {
-  width: 102%;
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
   height: 100%;
   background: #99E2D0;
   border-radius: 0 15px 15px 0;
-  display: none;
   opacity: 0;
-  z-index: 2;
-  transition: all 1000ms;
-  transform: translateX(-10px);
-}
-.entree input[type=checkbox] {
-  position: absolute;
-  display: none;
-}
-.entree input[type=checkbox]:checked ~ .overlay, .entree:focus-within .overlay, .entree:hover .overlay {
-  width: 25%;
-  height: 105%;
-  opacity: 1;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
   display: flex;
-  transform: translateX(0);
-}
-.entree:hover .overlay {
   align-items: center;
   justify-content: center;
-  transform: translateX(10px);
 }
-.entree:hover .overlay,
-.entree input[type=checkbox]:checked ~ .overlay {
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-.entree i.fa-circle-check {
+.overlay i.fa-circle-check {
   color: white;
   font-size: 24px;
   width: 40px;
@@ -382,6 +360,15 @@ h2 {
   align-items: center;
   justify-content: center;
   transition: all 1000ms;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked + label .overlay {
+  width: 25%;
+  opacity: 1;
 }
 
 h2 {
@@ -403,8 +390,9 @@ h4 {
   margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
 }
 
-p {
+.txt {
   margin: 0; /* Supprime la marge par défaut */
+  margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
 }
 
 .argent {
@@ -412,6 +400,7 @@ p {
   display: flex;
   width: 10%;
   align-items: flex-end;
+  transition: all 0.5s ease-in-out;
 }
 
 @media (min-width: 1024px) {
