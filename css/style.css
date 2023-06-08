@@ -312,7 +312,7 @@ h2 {
   }
 }
 .menu-container {
-  background-color: #99E2D0;
+  background-color: #F6F6F6;
   border-radius: 40px 40px 0 0;
   margin-top: -60px;
   z-index: 2;
@@ -383,6 +383,7 @@ h3.tiret {
   font-size: 18px;
   border-bottom-width: 3px;
   width: 3%;
+  margin-left: 23px;
 }
 
 h4 {
@@ -479,6 +480,34 @@ h4 {
 }
 .heart .fa-solid.fa-heart:hover .fa-regular.fa-heart {
   opacity: 0;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: relative; /* Ajout de la propriété position */
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

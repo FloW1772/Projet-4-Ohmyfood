@@ -1,5 +1,5 @@
 .menu-container {
-  background-color: #99E2D0;
+  background-color: #F6F6F6;
   border-radius: 40px 40px 0 0;
   margin-top: -60px;
   z-index: 2;
@@ -71,6 +71,8 @@ input[type="checkbox"]:checked + label .overlay {
     font-size: 18px;
     border-bottom-width: 3px;
     width: 3%;
+    margin-left: 23px;
+
   }
   
 
