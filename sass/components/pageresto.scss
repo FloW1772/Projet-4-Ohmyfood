@@ -59,12 +59,32 @@ input[type="checkbox"]:checked + label .overlay {
   opacity: 1;
 }
 
-  h2 {
-    border-radius: 10px 10px 0 0; // Arrondir les deux bords supérieurs, avec une valeur de rayon de 10px
-    overflow: hidden; // Masquer tout contenu débordant des bordures arrondies
-    margin-bottom: 0; // Supprime la marge inférieure par défaut du h2
+$title-margin: 10px; // Ajustez la marge selon vos besoins
+$heart-offset: 11px; // Ajustez le décalage vers le bas selon vos besoins
 
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center; // Centre horizontalement les éléments
+
+  h2 {
+    margin-right: $title-margin;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    margin-bottom: 0;
   }
+
+  .heart {
+    flex-shrink: 0;
+    position: relative; // Définit la position relative
+    top: $heart-offset; // Décalage vers le bas du cœur
+  }
+}
+
+
+
+
+  
   h3.tiret {
     margin-bottom: 20px;
     border-bottom: 3px solid #99E2D0;

@@ -371,10 +371,21 @@ input[type=checkbox]:checked + label .overlay {
   opacity: 1;
 }
 
-h2 {
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title h2 {
+  margin-right: 10px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   margin-bottom: 0;
+}
+.title .heart {
+  flex-shrink: 0;
+  position: relative;
+  top: 11px;
 }
 
 h3.tiret {
@@ -480,34 +491,6 @@ h4 {
 }
 .heart .fa-solid.fa-heart:hover .fa-regular.fa-heart {
   opacity: 0;
-}
-
-.lds-dual-ring {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  position: relative; /* Ajout de la propriété position */
-}
-
-.lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
