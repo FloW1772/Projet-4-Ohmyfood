@@ -58,7 +58,18 @@ input[type="checkbox"]:checked + label .overlay {
   width: 25%;
   opacity: 1;
 }
+input[type="checkbox"]:checked + .entree .argent {
+  margin-left: -10px;
+}
 
+
+.argent {
+  margin: 0;
+  display: flex;
+  width: 10%;
+  align-items: flex-end;
+  transition: all 0.5s ease-in-out;
+}
 $title-margin: 10px; // Ajustez la marge selon vos besoins
 $heart-offset: 11px; // Ajustez le décalage vers le bas selon vos besoins
 
@@ -81,10 +92,6 @@ $heart-offset: 11px; // Ajustez le décalage vers le bas selon vos besoins
   }
 }
 
-
-
-
-  
   h3.tiret {
     margin-bottom: 20px;
     border-bottom: 3px solid #99E2D0;
@@ -100,7 +107,6 @@ h4 {
     margin-bottom: 5px; /* Ajustez la marge inférieure selon vos préférences */
     margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
 
-
   }
   
   .txt {
@@ -109,76 +115,15 @@ h4 {
 }
 
 
-  
-  .argent {
-    margin: 0;
-    display: flex;
-    width: 10%;
-    align-items: flex-end;
-    transition: all 0.5s ease-in-out;
-  }
 
     @media (min-width: 1024px) {
-      .container-global {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-      }
-    
-      .entree {
-        width: 70%;
-        margin: 0 auto 20px auto;
-      }
-    
-      .overlay {
-        width: calc(100% + 10%);
-        height: calc(100% + 5%);
-      }
-    
-      input[type="checkbox"] {
-        display: none;
-      }
-    
-      input[type="checkbox"]:checked ~ .overlay,
-      .entree:focus-within .overlay {
-        width: 25%;
-        height: calc(100% + 5%);
-      }
-    
-      .entree:hover .overlay {
-        width: 25%;
-        height: calc(100% + 21%);
-      }
-    
-      .entree:active .overlay {
-        width: 0;
-        height: calc(100% + 21%);
-      }
-    
-      i.fa-circle-check {
-        width: 30px;
-        height: 30px;
-        font-size: 20px;
-      }
-    
-      h2 {
-        border-radius: 10px 10px 0 0;
-      }
-    
-      h3.tiret {
-        width: 5%;
-      }
-    
-      h4 {
-        margin-left: 10px;
-      }
-    
-      p {
-        margin-left: 10px;
-      }
-    
-      .argent {
-        width: 20%;
-      }
+      .menu-container {
+        background-color: #F6F6F6;
+        border-radius: 40px 40px 0 0;
+        margin-top: -100px;
+        z-index: 2;
+        position: relative;
+        width: 60%;
+        left:19%;
+      }   
     }

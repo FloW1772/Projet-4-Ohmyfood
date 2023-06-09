@@ -9,15 +9,24 @@ h1 {
   font-family: "Shrikhand", cursive;
 }
 
-header {
+#header {
   display: flex;
+  align-items: center;
   justify-content: center;
   padding-top: 25px;
   padding-bottom: 25px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
-header img {
-  width: 50%;
+
+img {
+  width: 50%; /* Set the width to 100% to maintain the original size */
+  margin: 0; /* Reset the margins */
+}
+
+.fa-arrow-left {
+  font-size: 32px;
+  margin-right: 10px;
+  margin-left: -75px; /* Change the left margin to 0 to move the icon to the left */
 }
 
 .image-container {
@@ -34,7 +43,12 @@ header img {
 
 @media (min-width: 1024px) {
   header img {
-    width: 100%;
+    width: 15%;
+  }
+  header .fa-arrow-left {
+    font-size: 32px;
+    margin-right: 10px;
+    margin-left: -575px; /* Change the left margin to 0 to move the icon to the left */
   }
 }
 footer {
@@ -183,6 +197,28 @@ footer ul li a:before {
   margin-bottom: 10%;
 }
 
+@media (min-width: 1024px) {
+  .button {
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    color: white; /* couleur du texte */
+    border: none; /* pas de bordure */
+    padding: 10px 20px; /* taille du padding */
+    text-align: center; /* centrage horizontal */
+    text-decoration: none; /* pas de soulignement */
+    display: inline-block; /* afficher en ligne */
+    font-size: 16px; /* taille de police */
+    margin: 4px 2px; /* marges */
+    cursor: pointer; /* curseur pointer au survol */
+    border-radius: 25px; /* bords arrondis */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10%;
+    width: 186px; /* largeur du bouton */
+    height: 50px; /* hauteur du bouton */
+  }
+  .button:hover {
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  }
+}
 .section-restaurants {
   display: flex;
   flex-direction: column;
@@ -371,6 +407,18 @@ input[type=checkbox]:checked + label .overlay {
   opacity: 1;
 }
 
+input[type=checkbox]:checked + .entree .argent {
+  margin-left: -10px;
+}
+
+.argent {
+  margin: 0;
+  display: flex;
+  width: 10%;
+  align-items: flex-end;
+  transition: all 0.5s ease-in-out;
+}
+
 .title {
   display: flex;
   align-items: center;
@@ -407,64 +455,15 @@ h4 {
   margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
 }
 
-.argent {
-  margin: 0;
-  display: flex;
-  width: 10%;
-  align-items: flex-end;
-  transition: all 0.5s ease-in-out;
-}
-
 @media (min-width: 1024px) {
-  .container-global {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .entree {
-    width: 70%;
-    margin: 0 auto 20px auto;
-  }
-  .overlay {
-    width: 110%;
-    height: 105%;
-  }
-  input[type=checkbox] {
-    display: none;
-  }
-  input[type=checkbox]:checked ~ .overlay,
-  .entree:focus-within .overlay {
-    width: 25%;
-    height: 105%;
-  }
-  .entree:hover .overlay {
-    width: 25%;
-    height: 121%;
-  }
-  .entree:active .overlay {
-    width: 0;
-    height: 121%;
-  }
-  i.fa-circle-check {
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-  }
-  h2 {
-    border-radius: 10px 10px 0 0;
-  }
-  h3.tiret {
-    width: 5%;
-  }
-  h4 {
-    margin-left: 10px;
-  }
-  p {
-    margin-left: 10px;
-  }
-  .argent {
-    width: 20%;
+  .menu-container {
+    background-color: #F6F6F6;
+    border-radius: 40px 40px 0 0;
+    margin-top: -100px;
+    z-index: 2;
+    position: relative;
+    width: 60%;
+    left: 19%;
   }
 }
 .heart .fa-regular.fa-heart {
