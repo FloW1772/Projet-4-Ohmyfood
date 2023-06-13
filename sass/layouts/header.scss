@@ -36,13 +36,14 @@ img {
 @media (min-width: 1024px) {
   header {
       img {
-          width: 15%;
+          width: 25%;
+          align-items: center;
          
       }
       .fa-arrow-left {
         font-size: 32px;
         margin-right: 10px;
-        margin-left: -575px; /* Change the left margin to 0 to move the icon to the left */
+        margin-left: -535px; /* Change the left margin to 0 to move the icon to the left */
       }
   }
 }

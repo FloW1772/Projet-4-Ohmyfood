@@ -1,40 +1,53 @@
-.button {
-  background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  color: white; /* couleur du texte */
-  border: none; /* pas de bordure */
-  padding: 10px 20px; /* taille du padding */
-  text-align: center; /* centrage horizontal */
-  text-decoration: none; /* pas de soulignement */
-  display: inline-block; /* afficher en ligne */
-  font-size: 16px; /* taille de police */
-  margin: 4px 2px; /* marges */
-  cursor: pointer; /* curseur pointer au survol */
-  border-radius: 25px; /* bords arrondis */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  margin-bottom: 10%;
-}
-
-@media (min-width: 1024px) {
   .button {
     background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-    color: white; /* couleur du texte */
-    border: none; /* pas de bordure */
-    padding: 10px 20px; /* taille du padding */
-    text-align: center; /* centrage horizontal */
-    text-decoration: none; /* pas de soulignement */
-    display: inline-block; /* afficher en ligne */
-    font-size: 16px; /* taille de police */
-    margin: 4px 2px; /* marges */
-    cursor: pointer; /* curseur pointer au survol */
-    border-radius: 25px; /* bords arrondis */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     margin-bottom: 10%;
-    width: 186px; /* largeur du bouton */
-    height: 50px; /* hauteur du bouton */
+    width: 186px;
+    height: 50px;
+
+    &:hover {
+      background-image: none;
+      background-color: #FF79DA;
+    }
+  }
+
+
+
+
+
+  @media (min-width: 1024px) {
+    .button {
+      background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 25px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      margin-bottom: 10%;
+      width: 186px;
+      height: 50px;
+  
+      &:hover {
+        background-image: none;
+        background-color: #FF79DA;
+      }
+    }
   }
   
-  .button:hover {
-    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  }
-  
-}
+

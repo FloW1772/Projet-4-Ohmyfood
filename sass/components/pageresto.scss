@@ -58,7 +58,7 @@ input[type="checkbox"]:checked + label .overlay {
   width: 25%;
   opacity: 1;
 }
-input[type="checkbox"]:checked + .entree .argent {
+input[type="checkbox"]:checked + label .argent {
   margin-left: -10px;
 }
 
@@ -83,6 +83,7 @@ $heart-offset: 11px; // Ajustez le décalage vers le bas selon vos besoins
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     margin-bottom: 0;
+    
   }
 
   .heart {
