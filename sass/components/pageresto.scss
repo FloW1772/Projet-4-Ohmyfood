@@ -18,7 +18,7 @@
   color: black;
   background: #F7F7F7;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
+  border-radius: 20px;
   cursor: pointer;
   padding-right: 2%;
   height: 80px;
@@ -53,13 +53,19 @@
 input[type="checkbox"] {
   display: none;
 }
+input[type="checkbox"]:checked + label {
+  justify-content: flex-start;
 
+}
 input[type="checkbox"]:checked + label .overlay {
   width: 25%;
   opacity: 1;
 }
+input[type="checkbox"]:checked + label .content {
+  width: 65%;
+}
 input[type="checkbox"]:checked + label .argent {
-  margin-left: -10px;
+  width: 10%;
 }
 
 
@@ -69,6 +75,7 @@ input[type="checkbox"]:checked + label .argent {
   width: 10%;
   align-items: flex-end;
   transition: all 0.5s ease-in-out;
+  justify-content: flex-end;
 }
 $title-margin: 10px; // Ajustez la marge selon vos besoins
 $heart-offset: 11px; // Ajustez le décalage vers le bas selon vos besoins
@@ -115,6 +122,59 @@ h4 {
     margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
 }
 
+.entrées {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease, transform 2s ease;
+  animation: showPlats 2s ease 2s forwards;
+}
+
+@keyframes showentrées {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plats {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 4s ease, transform 4s ease;
+  animation: showPlats 4s ease 4s forwards;
+}
+
+@keyframes showPlats {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dessert {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 6s ease, transform 6s ease;
+  animation: showPlats 6s ease 6s forwards;
+}
+
+@keyframes showDessert {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
     @media (min-width: 1024px) {

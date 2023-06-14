@@ -1,29 +1,27 @@
 .explo {
-
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #f7f7f7;
 
-  section {
+  h2, p {
     text-align: center;
   }
-
-
 }
+
 @media screen and (min-width: 1024px) {
   .explo {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+  }
 
-
-    section {
-      text-align: center;
-
-      br {
-        display: none;
-      }
-    }
+  .explo h2 br,
+  .explo p br {
+    display: none;
   }
 }
+
+
