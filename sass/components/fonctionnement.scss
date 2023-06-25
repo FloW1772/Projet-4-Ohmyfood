@@ -3,20 +3,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .etape{
+
+  .etape {
+    position: relative;
     text-decoration: none;
     color: black;
-    /* Background */
     background: #F7F7F7;
-    /* Shadow/Instructions */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
     display: flex;
     gap: 15px;
     align-items: center;
-    padding: 3% 3% 3% 0;
-    margin-bottom: 20px; /* Ajout de l'espace entre les containers */
-    .number{
+    padding: 6% 16% 6% 16%;
+    margin-bottom: 20px;
+
+
+    .number {
+      position: absolute;
       border-radius: 50%;
       background-color: $primary-color;
       color: white;
@@ -25,38 +28,42 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-left: -15px;
+      z-index: 1;
+      left: -15px;
     }
   }
 }
 
-  h2 {
-    text-align: center;
-  }
 
+.fonction {
+  display: block;
+  margin-left: 6%;
+}
 
+@media only screen and (min-width: 1024px) {
+  .container-etapes {
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 40px;
 
-  @media only screen and (min-width: 1024px) {
-    .container-etapes {
-      flex-direction: row;
-      gap: 20px;
-      margin-bottom: 40px;
-      
-      .etape {
-        flex-direction: row; /* Modifier la direction en ligne */
-        align-items: center; /* Aligner les éléments sur la ligne */
-        margin-bottom: 0;
-        padding: 20px;
-        margin-right: 35px; /* Ajouter un écart entre les conteneurs */
-        
-  
-        .number {
-          position: relative;
-          margin-left: -12%; /* Déplacer le numéro de moitié vers la gauche */
-          margin-right: 35px; /* Ajouter un espace entre le nombre et le contenu */
-        }
+    .etape {
+      flex-direction: row; /* Modifier la direction en ligne */
+      align-items: center; /* Aligner les éléments sur la ligne */
+      margin-bottom: 0;
+      padding: 20px;
+      margin-right: 35px; /* Ajouter un écart entre les conteneurs */
+
+      .number {
+        position: relative;
+        margin-left: -8%; /* Déplacer le numéro de moitié vers la gauche */
+        margin-right: 35px; /* Ajouter un espace entre le nombre et le contenu */
       }
     }
   }
-  
-  
+
+    .fonction {
+      margin-left: 282px; /* Nouvelle valeur de la marge pour les écrans de largeur minimale de 1024px */
+      /* Autres styles spécifiques à la classe "fonction" pour cette condition de media query */
+    }
+  }
+

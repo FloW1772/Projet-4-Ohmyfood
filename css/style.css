@@ -244,9 +244,10 @@ footer ul li a:before {
   flex-direction: column;
   background-color: #f7f7f7; /* Gris clair */
 }
-.section-restaurants h2 {
+.section-restaurants .resto {
   font-size: 28px;
   margin-bottom: 30px;
+  margin-left: 10px;
 }
 .section-restaurants .container-cards {
   padding: 0 3%;
@@ -298,18 +299,22 @@ footer ul li a:before {
   .container-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Ajout de la propriété pour coller les cartes ensemble */
+    justify-content: space-between;
     align-items: stretch;
   }
   .container-cards a {
-    flex-basis: 48%; /* Ajuster en fonction de l'espace souhaité entre les cartes */
-    margin-bottom: 20px; /* Ajouter un espacement vertical entre les cartes */
+    flex-basis: 48%;
+    margin-bottom: 20px;
   }
   .container-cards .card {
     width: 100%;
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 0;
+  }
+  .container-cards .card .resto {
+    position: relative;
+    left: 200px;
   }
 }
 .container-etapes {
@@ -319,20 +324,20 @@ footer ul li a:before {
   align-items: center;
 }
 .container-etapes .etape {
+  position: relative;
   text-decoration: none;
   color: black;
-  /* Background */
   background: #F7F7F7;
-  /* Shadow/Instructions */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   display: flex;
   gap: 15px;
   align-items: center;
-  padding: 3% 3% 3% 0;
-  margin-bottom: 20px; /* Ajout de l'espace entre les containers */
+  padding: 6% 16% 6% 16%;
+  margin-bottom: 20px;
 }
 .container-etapes .etape .number {
+  position: absolute;
   border-radius: 50%;
   background-color: #9356dc;
   color: white;
@@ -341,11 +346,13 @@ footer ul li a:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -15px;
+  z-index: 1;
+  left: -15px;
 }
 
-h2 {
-  text-align: center;
+.fonction {
+  display: block;
+  margin-left: 6%;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -363,8 +370,12 @@ h2 {
   }
   .container-etapes .etape .number {
     position: relative;
-    margin-left: -12%; /* Déplacer le numéro de moitié vers la gauche */
+    margin-left: -8%; /* Déplacer le numéro de moitié vers la gauche */
     margin-right: 35px; /* Ajouter un espace entre le nombre et le contenu */
+  }
+  .fonction {
+    margin-left: 282px; /* Nouvelle valeur de la marge pour les écrans de largeur minimale de 1024px */
+    /* Autres styles spécifiques à la classe "fonction" pour cette condition de media query */
   }
 }
 .menu-container {
@@ -477,11 +488,17 @@ h3.tiret {
 h4 {
   margin-bottom: 5px; /* Ajustez la marge inférieure selon vos préférences */
   margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .txt {
   margin: 0; /* Supprime la marge par défaut */
   margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .entrées {
