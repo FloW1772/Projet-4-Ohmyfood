@@ -247,7 +247,7 @@ footer ul li a:before {
 .section-restaurants .resto {
   font-size: 28px;
   margin-bottom: 30px;
-  margin-left: 10px;
+  margin-left: 3%;
 }
 .section-restaurants .container-cards {
   padding: 0 3%;
@@ -311,10 +311,6 @@ footer ul li a:before {
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 0;
-  }
-  .container-cards .card .resto {
-    position: relative;
-    left: 200px;
   }
 }
 .container-etapes {
@@ -561,6 +557,9 @@ h4 {
     position: relative;
     width: 60%;
     left: 19%;
+  }
+  .menu-container h3.tiret {
+    margin-left: 43px;
   }
 }
 .heart .fa-regular.fa-heart {
