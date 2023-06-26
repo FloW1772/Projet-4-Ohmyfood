@@ -453,6 +453,7 @@ input[type=checkbox]:checked + label .argent {
   align-items: flex-end;
   transition: all 0.5s ease-in-out;
   justify-content: flex-end;
+  padding-bottom: 22px;
 }
 
 .title {
@@ -481,12 +482,15 @@ h3.tiret {
   margin-left: 23px;
 }
 
-h4 {
+.titre {
   margin-bottom: 5px; /* Ajustez la marge inférieure selon vos préférences */
   margin-left: 20px; /* Ajuste la marge gauche à 20 pixels */
   white-space: nowrap;
+  margin-top: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: bold;
+  display: block;
 }
 
 .txt {
@@ -495,6 +499,7 @@ h4 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
 }
 
 .entrées {
@@ -559,7 +564,7 @@ h4 {
     left: 19%;
   }
   .menu-container h3.tiret {
-    margin-left: 43px;
+    margin-left: 46px;
   }
 }
 .heart .fa-regular.fa-heart {
